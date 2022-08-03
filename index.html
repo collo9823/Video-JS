@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <!-- <link rel="stylesheet" href="./assets/index.css"> -->
+    <link rel="stylesheet" href="./assets/index.css">
 </head>
 <body>
     <header>
@@ -19,44 +19,8 @@
             <source src="./assets/video.mp4">
         </video>
 
-        <button>Play/Pause</button>
-        <script>
-            //1. traigo el video y button del html
-            const video = document.querySelector("video");
-            const button = document.querySelector("button");
-
-         
-
-            
-            // 3. creo una funcion media player
-            // 4. le agregamos un parametro (config) que va a tener el elemento video original. this.media se le asigna el parámetro. (mediaPlayer(el.video))
-            // this.mediaa == a decir MediaPlayer.mediaa
-            function MediaPlayer(config){
-                this.mediaa = config.el;
-            }
-            
-            // 3. a mediaPlayer le asigno una funcion llamada "play" usando el prototype (la convertimos en una funcion extendida)
-            // 4. a this.media le asignamos play para que se ejecute cuando presionamos el boton    
-            MediaPlayer.prototype.play = function(){
-                this.mediaa.play();
-            }
-
-            MediaPlayer.prototype.pause = function(){
-            this.mediaa.pause()
-            }
-
-            // 3. creo una instancia del prototipo mediaPlayer mediante el "new" en la funcion que llamaremos "player" 
-            // 4. le asignamos el valor de video mediante la destructuración de objetos donde al elemento "el" le asigno el "video"
-            const player = new MediaPlayer({ el:video})
-            
-            // 2. el damos la el onclick para hacer funcionar el boton para reproducir el video (video.play())
-            button.onclick = () =>{
-            player.mediaa.paused ? 
-            player.play() : player.pause()
-
-            }
-            
-        </script>
+        <button class="btn">Play/Pause</button>
+        <script src="./assets/index.js"></script>
     </main>
 </body>
 </html>
